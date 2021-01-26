@@ -7,7 +7,7 @@ export default class Home extends Component {
   onChangeName = text => {console.log(text);};
   onChangePassword = text => {console.log(text);};
 
-  onLogin = () => {console.log('correct');};
+  onLogin = () => {console.log('correct');}; 
   onRegister = () => {console.log('againCorrect');};
 
   render() {
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     },
     furniText:{
       alignItems: 'center',
-      marginTop:-70
+      marginTop:-120
     },
     background2:{
       width: 135,
