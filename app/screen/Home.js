@@ -3,7 +3,7 @@ import {View, Text,StyleSheet,Image,TouchableOpacity} from 'react-native';
 import Images from '../configs/Images';
 
 export default class Home extends Component {
-  onCategory = () => {console.log('c');};
+  onCategory = () => {this.props.navigation.navigate("Category")};
   onFavorite = () => {console.log('a');};
   onDiscount = () => {console.log('correct');};
   onOrder = () => {console.log('againCorrect');};
@@ -55,8 +55,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
   },
   homeImage:{
-    width: 400,
-    height:250,
+    width: "100%",
+    height:"50%",
     marginBottom:20,
   },
   buttonContainer: {
@@ -65,10 +65,10 @@ const styles = StyleSheet.create({
       
   },
   button1:{
-      width:150,
+      width:"40%",
       height:100,
       padding:10,
-      margin:10,
+      margin:"2%",
       borderRadius:10,
       justifyContent:'center',
       alignItems:'center',

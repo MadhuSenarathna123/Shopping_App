@@ -2,19 +2,23 @@ import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 
 import signin from '../screen/signin';
-import category from '../screen/category';
+import Home from '../screen/Home';
+import Category from '../screen/Category';
 
 const MainNavigator = createStackNavigator(
     {
         signin: {
             screen:signin,
         },
-        category: {
-            screen:category,
+        Home: {
+            screen:Home,
+        },
+        Category: {
+            screen:Category,
         },
     },
     {
-        initialRouteName: 'category',
+        initialRouteName: 'signin',
     },
 );
 

@@ -7,7 +7,7 @@ export default class Home extends Component {
   onChangeName = text => {console.log(text);};
   onChangePassword = text => {console.log(text);};
 
-  onLogin = () => {console.log('correct');}; 
+  onLogin = () => {this.props.navigation.navigate("Home")}; 
   onRegister = () => {console.log('againCorrect');};
 
   render() {
@@ -65,21 +65,21 @@ const styles = StyleSheet.create({
       height:200,
     },
     textInput1:{
-      width:300,
-      height:40,
-      marginTop:65,
+      width:"90%",
+      height:"8%",
+      marginTop:55,
       borderWidth:1,
       borderColor:'#000000',
     },
     textInput2:{
-      width:300,
-      height:40,
-      marginTop:25,
+      width:"90%",
+      height:"8%",
+      marginTop:15,
       borderWidth:1,
       borderColor:'#000000',
     },
     button1:{
-      width:300,
+      width:"90%",
       padding:10,
       marginTop:50,
       borderRadius:35,
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
       backgroundColor:'#642EFE',
     },
     button2:{
-      width:300,
+      width:"90%",
       padding:10,
       marginTop:15,
       borderRadius:35,
