@@ -5,7 +5,7 @@ export default class MyComponent extends Component {
   render() {
     return (
       <View>
-        <Text style={{color:'#4000FF'},{fontSize:26}}>{this.props.furniture}</Text>
+        <Text style={{Color:'#4000FF'},{fontSize:26}}>{this.props.furniture}</Text>
       </View>
     );
   }

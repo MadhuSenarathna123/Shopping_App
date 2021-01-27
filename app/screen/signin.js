@@ -30,13 +30,13 @@ export default class Home extends Component {
         <TouchableOpacity 
         onPress={this.onLogin}
         style={styles.button1}>
-        <Text>Login</Text>
+        <Text style={{fontSize:20}}>Login</Text>
         </TouchableOpacity>
 
         <TouchableOpacity 
         onPress={this.onRegister}
         style={styles.button2}>
-        <Text>Register</Text>
+        <Text style={{fontSize:20}}>Register</Text>
         </TouchableOpacity>
 
 
