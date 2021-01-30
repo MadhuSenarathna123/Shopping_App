@@ -1,12 +1,17 @@
 import React,{Component} from 'react';
 import {View, Text,StyleSheet,ImageBackground,TouchableOpacity} from 'react-native';
 import Images from '../configs/Images';
+import MyComponent from '../components/MyComponent';
 
 export default class Home extends Component {
-  onCategory = () => {console.log('c');};
-  onFavorite = () => {console.log('a');};
-  onDiscount = () => {console.log('correct');};
-  onOrder = () => {console.log('againCorrect');};
+  onHomef = () => {console.log('a');};
+  onOffice = () => {console.log('b');};
+  onChildren = () => {console.log('c');};
+  onOutdoor = () => {console.log('d');};
+  onCommercial = () => {console.log('e');};
+  onCafe = () => {console.log('f');};
+  onBar = () => {console.log('g');};
+ 
   render() {
     return (
       <View> 
@@ -15,15 +20,17 @@ export default class Home extends Component {
       <View>
         <View style={styles.buttonContainer}>
           <TouchableOpacity 
-          onPress={this.onCategory}
+          onPress={this.onHomef}
           style={styles.button1}>
-          <Text style={{fontSize:22}}>Category</Text>
+           <MyComponent category="Home"/>
+           <MyComponent category="Furniture"/>
           </TouchableOpacity>
 
           <TouchableOpacity 
-          onPress={this.onFavorite}
+          onPress={this.onOffice}
           style={styles.button1}>
-          <Text style={{fontSize:22}}>Favorite</Text>
+           <MyComponent category="Office"/>
+           <MyComponent category="Furniture"/>
           </TouchableOpacity>
         </View>
       </View> 
@@ -32,29 +39,33 @@ export default class Home extends Component {
         <View style={styles.buttonContainer}>
 
          <TouchableOpacity 
-          onPress={this.onDiscount}
+          onPress={this.onChildren}
           style={styles.button1}>
-          <Text style={{fontSize:22}}>Discount</Text>
+           <MyComponent category="Children"/>
+           <MyComponent category="Furniture"/>
           </TouchableOpacity>
 
           <TouchableOpacity 
-          onPress={this.onOrder}
+          onPress={this.onOutdoor}
           style={styles.button1}>
-          <Text style={{fontSize:22}}>Order Detail</Text>
+           <MyComponent category="Outdoor"/>
+           <MyComponent category="Furniture"/>
           </TouchableOpacity>
         </View>
         <View>
         <View style={styles.buttonContainer}>
           <TouchableOpacity 
-          onPress={this.onCategory}
+          onPress={this.onCommercial}
           style={styles.button1}>
-          <Text style={{fontSize:22}}>Category</Text>
+           <MyComponent category="Commercial"/>
+           <MyComponent category="Furniture"/>
           </TouchableOpacity>
 
           <TouchableOpacity 
-          onPress={this.onFavorite}
+          onPress={this.onCafe}
           style={styles.button1}>
-          <Text style={{fontSize:22}}>Favorite</Text>
+           <MyComponent category="Cafe"/>
+           <MyComponent category="Furniture"/>
           </TouchableOpacity>
         </View>
       </View> 
@@ -63,9 +74,10 @@ export default class Home extends Component {
         <View style={styles.buttonContainer}>
 
          <TouchableOpacity 
-          onPress={this.onDiscount}
+          onPress={this.onBar}
           style={styles.button1}>
-          <Text style={{fontSize:22}}>Discount</Text>
+           <MyComponent category="Bar"/>
+           <MyComponent category="Furniture"/>
           </TouchableOpacity>
 
         </View>

@@ -1,12 +1,13 @@
 import React,{Component} from 'react';
 import {View, Text,StyleSheet,Image,TouchableOpacity} from 'react-native';
 import Images from '../configs/Images';
+import MyComponent from '../components/MyComponent';
 
 export default class Home extends Component {
   onCategory = () => {this.props.navigation.navigate("Category")};
-  onFavorite = () => {console.log('a');};
-  onDiscount = () => {console.log('correct');};
-  onOrder = () => {console.log('againCorrect');};
+  onFavorite = () => {this.props.navigation.navigate("Favorite")};
+  onDiscount = () => {this.props.navigation.navigate("Discount")};
+  onOrder = () => {this.props.navigation.navigate("Order_Details")};
   render() {
     return (
       <View> 
@@ -17,13 +18,13 @@ export default class Home extends Component {
           <TouchableOpacity 
           onPress={this.onCategory}
           style={styles.button1}>
-          <Text style={{fontSize:22}}>Category</Text>
+          <MyComponent category="Category"/>
           </TouchableOpacity>
 
           <TouchableOpacity 
           onPress={this.onFavorite}
           style={styles.button1}>
-          <Text style={{fontSize:22}}>Favorite</Text>
+          <MyComponent category="Favorite"/>
           </TouchableOpacity>
         </View>
       </View> 
@@ -34,13 +35,14 @@ export default class Home extends Component {
          <TouchableOpacity 
           onPress={this.onDiscount}
           style={styles.button1}>
-          <Text style={{fontSize:22}}>Discount</Text>
+          <MyComponent category="Discount"/>
           </TouchableOpacity>
 
           <TouchableOpacity 
           onPress={this.onOrder}
           style={styles.button1}>
-          <Text style={{fontSize:22}}>Order Detail</Text>
+          <MyComponent category="Order"/>
+          <MyComponent category="Details"/>
           </TouchableOpacity>
         </View>
       </View>   

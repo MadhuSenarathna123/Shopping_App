@@ -6,14 +6,14 @@ import Images from '../configs/Images';
 export default class Home extends Component {
   onChangeName = text => {console.log(text);};
   onChangePassword = text => {console.log(text);};
+  onChangeConfirm = text => {console.log(text);};
 
-  onLogin = () => {this.props.navigation.navigate("Home")}; 
-  onRegister = () => {this.props.navigation.navigate("Register")};
+  onSignin = () => {this.props.navigation.navigate("Home")}; 
+  onCancel = () => {this.props.navigation.navigate("Register")};
 
   render() {
     return (
       <View style={styles.container}>
-       <ImageBackground source={Images.background02} style={styles.background2}/>
         
         <View style={styles.furniText}>
         <MyComponent furniture="FURNITURE DESIGN"/>
@@ -22,25 +22,33 @@ export default class Home extends Component {
         onChangeText={this.onChangeName}
         style={styles.textInput1}
         placeholder="User Name"/>
+
         <TextInput 
         onChangeText={this.onChangePassword}
         style={styles.textInput2}
-        placeholder="password"/>
+        placeholder="New Password"/>
 
-        <TouchableOpacity 
-        onPress={this.onLogin}
-        style={styles.button1}>
-        <Text style={{fontSize:20}}>Login</Text>
-        </TouchableOpacity>
+        <TextInput 
+        onChangeText={this.onChangeConfirm}
+        style={styles.textInput2}
+        placeholder="Confirm Password"/>
 
-        <TouchableOpacity 
-        onPress={this.onRegister}
-        style={styles.button2}>
-        <Text style={{fontSize:20}}>Register</Text>
-        </TouchableOpacity>
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity 
+          onPress={this.onSignin}
+          style={styles.button1}>
+          <MyComponent register="Sign in"/>
+          </TouchableOpacity>
+
+          <TouchableOpacity 
+          onPress={this.onCancel}
+          style={styles.button2}>
+      <MyComponent register="Cancel"/>
+          </TouchableOpacity>
+          </View>
 
 
-        <ImageBackground source={Images.background01} style={styles.background1}/>
+      <ImageBackground source={Images.registr} style={styles.image}/>
         
         </View>   
        </View>
@@ -54,46 +62,50 @@ const styles = StyleSheet.create({
     },
     furniText:{
       alignItems: 'center',
-      marginTop:-120
+      marginTop:30,
     },
-    background2:{
-      width: 135,
-      height:150,
-    },
-    background1:{
+    image:{
       width: 350,
       height:200,
+      marginTop:15
     },
     textInput1:{
       width:"90%",
-      height:"8%",
-      marginTop:55,
+      height:"9%",
+      marginTop:30,
       borderWidth:1,
       borderColor:'#000000',
+      borderRadius:10
     },
     textInput2:{
       width:"90%",
-      height:"8%",
+      height:"9%",
       marginTop:15,
       borderWidth:1,
       borderColor:'#000000',
+      borderRadius:10
+    },
+    buttonContainer: {
+      flexDirection:'row',
+      alignSelf:'center',
+      marginTop:35,
+      marginBottom:-15
     },
     button1:{
-      width:"90%",
+      width:"45%",
       padding:10,
-      marginTop:40,
       borderRadius:35,
-      justifyContent:'center',
       alignItems:'center',
+      marginRight:20,
       backgroundColor:'#642EFE',
     },
     button2:{
-      width:"90%",
+      width:"45%",
       padding:10,
-      marginTop:15,
       borderRadius:35,
-      justifyContent:'center',
       alignItems:'center',
+      alignSelf:'center',
+      justifyContent:'center',
       backgroundColor:'#BCA9F5',
     },
   }
