@@ -4,8 +4,9 @@ import Images from '../configs/Images';
 import MyComponent from '../components/MyComponent';
 
 export default class Home extends Component {
-  onHomef = () => {console.log('a');};
-  onOffice = () => {console.log('b');};
+
+  onHomef = () => {this.props.navigation.navigate("Home_Furniture");};
+  onOffice = () => {console.log('b');}; 
   onChildren = () => {console.log('c');};
   onOutdoor = () => {console.log('d');};
   onCommercial = () => {console.log('e');};
@@ -19,12 +20,15 @@ export default class Home extends Component {
   
       <View>
         <View style={styles.buttonContainer}>
+
+        
           <TouchableOpacity 
-          onPress={this.onHomef}
-          style={styles.button1}>
+           onPress={this.onHomef}
+           style={styles.button1}>
            <MyComponent category="Home"/>
            <MyComponent category="Furniture"/>
           </TouchableOpacity>
+
 
           <TouchableOpacity 
           onPress={this.onOffice}

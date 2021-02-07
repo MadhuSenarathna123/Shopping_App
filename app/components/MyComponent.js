@@ -1,7 +1,8 @@
 import React,{Component} from 'react';
-import {View, Text,StyleSheet} from 'react-native';
+import {View, Text,StyleSheet,TouchableOpacity} from 'react-native';
 
 export default class MyComponent extends Component {
+  onHomef = () => {console.log('a');};
   render() {
     return (
       <View>

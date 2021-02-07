@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import {View, Text,StyleSheet,ImageBackground,TextInput, TouchableOpacity} from 'react-native';
+import {View, Text,StyleSheet,ImageBackground,TextInput, TouchableOpacity,SafeAreaView} from 'react-native';
 import MyComponent from '../components/MyComponent';
 import Images from '../configs/Images';
 
@@ -12,7 +12,7 @@ export default class Home extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
+      <SafeAreaView style={styles.container}>
        <ImageBackground source={Images.background02} style={styles.background2}/>
         
         <View style={styles.furniText}>
@@ -43,7 +43,7 @@ export default class Home extends Component {
         <ImageBackground source={Images.background01} style={styles.background1}/>
         
         </View>   
-       </View>
+       </SafeAreaView>
     );
   }
 } 

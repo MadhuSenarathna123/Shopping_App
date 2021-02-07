@@ -8,6 +8,7 @@ import Category from '../screen/Category';
 import Favorite from '../screen/Favorite';
 import Discount from '../screen/Discount';
 import Order_Details from '../screen/Order_Details';
+import Home_Furniture from '../screen/Home_Furniture';
 
 const MainNavigator = createStackNavigator(
     {
@@ -31,6 +32,9 @@ const MainNavigator = createStackNavigator(
         },
         Order_Details: {
             screen:Order_Details,
+        },
+        Home_Furniture: {
+            screen:Home_Furniture,
         },
     },
     {
