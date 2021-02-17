@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import {View, Text,StyleSheet,ImageBackground,TextInput, TouchableOpacity} from 'react-native';
+import {View, Text,StyleSheet,ImageBackground,TextInput, TouchableOpacity,SafeAreaView} from 'react-native';
 import MyComponent from '../components/MyComponent';
 import Images from '../configs/Images';
 
@@ -7,12 +7,12 @@ export default class Home extends Component {
   onChangeName = text => {console.log(text);};
   onChangePassword = text => {console.log(text);};
 
-  onLogin = () => {console.log('correct');};
-  onRegister = () => {console.log('againCorrect');};
+  onLogin = () => {this.props.navigation.navigate("Home")}; 
+  onRegister = () => {this.props.navigation.navigate("Register")};
 
   render() {
     return (
-      <View style={styles.container}>
+      <SafeAreaView style={styles.container}>
        <ImageBackground source={Images.background02} style={styles.background2}/>
         
         <View style={styles.furniText}>
@@ -30,20 +30,20 @@ export default class Home extends Component {
         <TouchableOpacity 
         onPress={this.onLogin}
         style={styles.button1}>
-        <Text>Login</Text>
+        <Text style={{fontSize:20}}>Login</Text>
         </TouchableOpacity>
 
         <TouchableOpacity 
         onPress={this.onRegister}
         style={styles.button2}>
-        <Text>Register</Text>
+        <Text style={{fontSize:20}}>Register</Text>
         </TouchableOpacity>
 
 
         <ImageBackground source={Images.background01} style={styles.background1}/>
         
         </View>   
-       </View>
+       </SafeAreaView>
     );
   }
 } 
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     },
     furniText:{
       alignItems: 'center',
-      marginTop:-70
+      marginTop:-120
     },
     background2:{
       width: 135,
@@ -65,30 +65,30 @@ const styles = StyleSheet.create({
       height:200,
     },
     textInput1:{
-      width:300,
-      height:40,
-      marginTop:65,
+      width:"90%",
+      height:"8%",
+      marginTop:55,
       borderWidth:1,
       borderColor:'#000000',
     },
     textInput2:{
-      width:300,
-      height:40,
-      marginTop:25,
+      width:"90%",
+      height:"8%",
+      marginTop:15,
       borderWidth:1,
       borderColor:'#000000',
     },
     button1:{
-      width:300,
+      width:"90%",
       padding:10,
-      marginTop:50,
+      marginTop:40,
       borderRadius:35,
       justifyContent:'center',
       alignItems:'center',
       backgroundColor:'#642EFE',
     },
     button2:{
-      width:300,
+      width:"90%",
       padding:10,
       marginTop:15,
       borderRadius:35,
